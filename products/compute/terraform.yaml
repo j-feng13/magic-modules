@@ -1121,6 +1121,7 @@ overrides: !ruby/object:Overrides::ResourceOverrides
       constants: templates/terraform/constants/interconnect_attachment.go.erb
       post_create: templates/terraform/post_create/interconnect_attachment.go.erb
       pre_delete: templates/terraform/pre_delete/interconnect_attachment.go.erb
+      encoder: templates/terraform/encoders/interconnect_attachment.go.erb
   License: !ruby/object:Overrides::Terraform::ResourceOverride
     exclude: true
   MachineImage: !ruby/object:Overrides::Terraform::ResourceOverride

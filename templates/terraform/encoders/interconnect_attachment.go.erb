@@ -1,0 +1,12 @@
+if _, ok := d.GetOk("partner_pairing_key"); ok {
+    if _, ok := d.GetOk("type"); ok {
+        pairingKey := d.Get("partner_pairing_key").([]interface{})[0]
+        interconnectType := d.Get("type").([]interface{})[0]
+
+        if interconnectType == "PARTNER_PROVIDER" {
+            obj["pairing_key"] = pairingKey
+        }
+    }
+    
+    return obj, nil
+}

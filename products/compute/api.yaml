@@ -7318,12 +7318,23 @@ objects:
           pairing key so that the provisioned circuit will lie in the specified
           domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
       - !ruby/object:Api::Type::String
+        name: 'partnerPairingKey'
+        description: |
+          [Input only for PARTNER_PROVIDER]. The opaque
+          identifier of an PARTNER attachment used to initiate provisioning with
+          a selected partner. Of the form "XXXXX/region/domain"
+        input: true
+        conflicts:
+          - pairing_key
+      - !ruby/object:Api::Type::String
         name: 'pairingKey'
         description: |
           [Output only for type PARTNER. Not present for DEDICATED]. The opaque
           identifier of an PARTNER attachment used to initiate provisioning with
           a selected partner. Of the form "XXXXX/region/domain"
         output: true
+        conflicts:
+          - partner_pairing_key
       - !ruby/object:Api::Type::String
         name: 'partnerAsn'
         description: |
