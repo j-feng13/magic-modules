@@ -1117,11 +1117,15 @@ overrides: !ruby/object:Overrides::ResourceOverrides
         ignore_read: true
       edgeAvailabilityDomain: !ruby/object:Overrides::Terraform::PropertyOverride
         default_from_api: true
+      pairingKey: !ruby/object:Overrides::Terraform::PropertyOverride
+        default_from_api: true
+      partnerMetadata: !ruby/object:Overrides::Terraform::PropertyOverride
+        default_from_api: true
     custom_code: !ruby/object:Provider::Terraform::CustomCode
       constants: templates/terraform/constants/interconnect_attachment.go.erb
       post_create: templates/terraform/post_create/interconnect_attachment.go.erb
       pre_delete: templates/terraform/pre_delete/interconnect_attachment.go.erb
-      encoder: templates/terraform/encoders/interconnect_attachment.go.erb
+      # encoder: templates/terraform/encoders/interconnect_attachment.go.erb
   License: !ruby/object:Overrides::Terraform::ResourceOverride
     exclude: true
   MachineImage: !ruby/object:Overrides::Terraform::ResourceOverride
